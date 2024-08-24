@@ -138,7 +138,7 @@ function LeftSidebar() {
 				</div>
 				<div className="ls-search">
 					<Image src={Assets.search_icon} alt="" />
-					<input type="text" placeholder="Search here..." onChange={searchHandler} />
+					<input type="text" placeholder="Search devaryan" onChange={searchHandler} />
 				</div>
 			</div>
 			<div className="ls-list">
