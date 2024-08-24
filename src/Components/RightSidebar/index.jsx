@@ -24,9 +24,9 @@ function RightSidebar() {
 	return chatUser ? (
 		<div className='rs'>
 			<div className="rs-profile">
-				<Image fluid src={chatUser.userData.avatar} alt="Profile" />
-				<h3>{Date.now() - chatUser.userData.lastSeen <= 70000 ? <Image className='dot' src={Assets.green_dot} alt="" /> : null}{chatUser.userData.name}</h3>
-				<p>{chatUser.userData.bio}</p>
+				<Image fluid src={chatUser?.userData?.avatar} alt="Profile" />
+				<h3>{Date.now() - chatUser?.userData?.lastSeen <= 70000 ? <Image className='dot' src={Assets.green_dot} alt="" /> : null}{chatUser?.userData?.name}</h3>
+				<p>{chatUser?.userData?.bio}</p>
 			</div>
 			<hr />
 			<div className="rs-media">

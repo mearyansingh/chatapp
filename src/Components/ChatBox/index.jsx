@@ -44,7 +44,6 @@ function ChatBox() {
 
 					if (userChatsSnapshot.exists()) {
 						const userChatData = userChatsSnapshot.data()
-						console.log(userChatData, "userChatData")
 						const chatIndex = userChatData.chatsData.findIndex((c) => c.messageId === messagesId)
 						userChatData.chatsData[chatIndex].lastMessage = input.slice(0, 30)
 						userChatData.chatsData[chatIndex].updatedAt = Date.now()
@@ -115,8 +114,8 @@ function ChatBox() {
 	return chatUser ? (
 		<div className={`chat-box ${chatVisible ? "" : "hidden"}`}>
 			<div className="chat-user">
-				<Image src={chatUser.userData.avatar} alt="" />
-				<p className='mb-0'>{chatUser.userData.name} {Date.now() - chatUser.userData.lastSeen <= 70000 ? <Image className='dot' src={Assets.green_dot} alt="" /> : null}</p>
+				<Image src={chatUser?.userData?.avatar} alt="" />
+				<p className='mb-0'>{chatUser?.userData?.name} {Date.now() - chatUser?.userData?.lastSeen <= 70000 ? <Image className='dot' src={Assets.green_dot} alt="" /> : null}</p>
 				<Image src={Assets.help_icon} alt="" className='help' />
 				<Image src={Assets.arrow_icon} alt="" className='arrow' onClick={() => setChatVisible(false)} />
 			</div>
@@ -125,13 +124,13 @@ function ChatBox() {
 					<div key={index} className={msg.sId === userData.id ? "s-msg" : "r-msg"}>
 						{msg["image"]
 							?
-							<Image className='msg-img' src={msg.image} />
+							<Image className='msg-img' src={msg?.image} />
 							:
-							<p className="msg">{msg.text}</p>
+							<p className="msg">{msg?.text}</p>
 						}
 						<div>
-							<Image src={msg.sId === userData.id ? userData.avatar : chatUser.userData.avatar} alt="" />
-							<p className='mb-0'>{convertTimestamp(msg.createdAt)}</p>
+							<Image src={msg.sId === userData.id ? userData?.avatar : chatUser?.userData?.avatar} alt="" />
+							<p className='mb-0'>{convertTimestamp(msg?.createdAt)}</p>
 						</div>
 					</div>
 				))}
